@@ -1,6 +1,7 @@
 class Train implements Runnable{
 
 String arr[]={"chennai","mumbai","indore","delhi","bhopal","gandhinagar","patiala","ludhiana","chandigarh","jalandhar"};
+ static int count=0;
 void station(int id,String name){
 
 
@@ -8,6 +9,7 @@ for(int i=0;i<arr.length;i++){
 
 if((id==i)&&(Thread.currentThread().getName()==name)){
 System.out.println(Thread.currentThread().getName()+"is in "+arr[i]);
+ count++;
 }
 
 }
@@ -24,6 +26,7 @@ void station1(int id,String name){
 for(int i=0;i<arr.length;i++){
 if((id==i)&&(Thread.currentThread().getName()==name)){
 System.out.println(Thread.currentThread().getName()+"is in "+arr[i]);
+ count++;
 }
 
 }
@@ -38,7 +41,7 @@ else{
 station1(i,"train2");
 }
 }
-
+System.out.println(count);
 }
 
 }
